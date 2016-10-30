@@ -13,7 +13,9 @@
       -webkit-transition:.4s ease-in-out;
       -o-transition:.4s ease-in-out;
       }
-          
+
+    input[type=checkbox]{display: none;}
+
     #nav{
       position:absolute;
       top:0;
@@ -23,14 +25,36 @@
       max-width:960px !important;
       height:auto;
       max-height:0;
+      overflow:hidden;
       background:#ddd;
       color:#666;
+      display:table;
       }
       
-    #nav a{display:inline-block;width:auto;min-width:500px;height:80px;}
+    #nav a{
+      display:table-cell;
+      height:80px;
+      }#nav > a{
+        padding-left:10px;
+        }
+    
+    body input[type=checkbox]:checked ~ #nav{
+      max-height:500px;
+      }
+      
+    body input[type=checkbox]:checked ~ #topbar{
+      position:absolute;
+      top:80px;
+      }
+      
+    body input[type=checkbox]:checked ~ #wrap{
+      position:absolute;
+      bottom:0;
+      }
     </style>
   </head>
-  <body>  
+  <body>
+    <input type='checkbox' id='showhide' />
     <div id='nav'>
       <a>Test</a>
       <a>Test</a>
@@ -38,12 +62,11 @@
       <a>Test</a>
       <a>Test</a>
     </div>
-    <input type='checkbox' id='showhide' />
     <div id='topbar'>
       <div id='topcenter'>
         <div id='logo'></div>
         <div id='username'><a href='profile.html' id='signin'>Sign&nbsp;In</a></div><!-- Used a &nbsp; here so when the browser shrinks it always displays "Sign In" as one line -->
-        <div id='navbutton'><label for='showhide'></label></div>
+        <div id='navbutton'><label for='showhide'><img width='40' height='40' /></label></div>
         <div id='search'><input type='text' name='search' placeholder=' Search...' /></div>
       </div>
     </div>
