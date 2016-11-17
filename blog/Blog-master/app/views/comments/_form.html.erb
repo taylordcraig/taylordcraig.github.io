@@ -1,0 +1,8 @@
+<h1>Create Commment</h1>
+<%= form_for [@post, @comment ], remote: true do |c| %>
+<div>
+  <%= c.label :body%><br />
+  <%= c.text_area :body %> <br />
+</div>
+<%= c.submit %>
+<% end %>

@@ -1,0 +1,8 @@
+ENV['GOOGLE_CONSUMER_KEY'] = 'Add key here'
+ENV['GOOGLE_CONSUMER_SECRET'] = 'Add secret key here'
+
+ENV['FACEBOOK_CONSUMER_KEY'] = 'Add key here'
+ENV['FACEBOOK_CONSUMER_SECRET'] = 'Add secret key here'
+
+ENV['EMAIL_USER_NAME'] = 'Add username here'
+ENV['EMAIL_PASSWORD'] = 'Add password here'

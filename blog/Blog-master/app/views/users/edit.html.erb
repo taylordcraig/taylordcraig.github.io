@@ -1,0 +1,36 @@
+<h1>Edit User</h1>
+
+<%= @user.errors.full_messages.join(', ') %>
+<%= form_for @user do |f| %>
+
+  <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div>
+    <%= f.label :current_password %>
+    <%= f.password_field :current_password %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <%= f.submit %><br />
+  <button><%= link_to 'Delete User', user_path(@user),
+  method: :delete,
+  data: {confirm: 'are you sure?'} %></button>
+  
+<%end%>

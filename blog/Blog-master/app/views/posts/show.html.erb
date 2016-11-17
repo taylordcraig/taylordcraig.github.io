@@ -1,0 +1,33 @@
+<h1><%= @post.title %></h1>
+<p>Category: <%= @post.category.title %></p>
+<p><%= @post.body %></p>
+Posted by: <%= @post.user_full_name %><br />
+Post Tags: <%= @post.tags.map(&:name).join(', ') %>
+
+<section class='star widget'>
+  <%= star_counter(@post) %>
+  <% if @post.stars.any? %>
+    (Average: <%= star_average(@post) %>)
+  <% end %>
+</section>
+
+<hr />
+<% if can? :modify, @post %>
+  <%= button_to 'Edit Post', edit_post_path(@post), method: :get %>
+  <%= button_to 'Delete Post', post_path(@post),
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+<div id= 'favbutton'>
+  <%= render '/favourites/button' %>
+</div>
+
+<h1>All Comments</h1>
+<div id = 'comments'>
+<% @post.comments.each do |comment| %>
+  <%= render '/comments/comment', { comment: comment } %>
+<% end %>
+</div>
+
+<%= render '/comments/form' %>

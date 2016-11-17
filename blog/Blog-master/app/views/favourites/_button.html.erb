@@ -1,0 +1,11 @@
+<% if user_signed_in? && can?(:favourite, @post) %>
+  <% if @favourite&.persisted? %>
+    <%= button_to "Un-favourite", post_favourite_path(@post, @favourite),
+    remote: true,
+    method: :delete %>
+  <% else %>
+    <%= button_to "Favourite", post_favourites_path(@post),
+    remote: true,
+    method: :post %>
+  <% end %>
+<% end %>

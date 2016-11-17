@@ -1,0 +1,13 @@
+<div class = "comment" id ="<%= dom_id(comment)%>">
+Comment from: <%= comment.user_full_name %>
+<div class='commentbody'>
+  <%= comment.body %>
+</div>
+<% if can? :delete, comment %>
+  <button><%= link_to 'Delete Comment', post_comment_path(@post, comment),
+  method: :delete,
+  remote: true,
+  data: {confirm: 'are you sure?'} %></button>
+  <hr />
+<% end %>
+</div>

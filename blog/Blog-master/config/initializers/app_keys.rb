@@ -1,0 +1,8 @@
+ENV['GOOGLE_CONSUMER_KEY'] = '174019313196-05nh7blmcnfmvev5o0hh34hkndiuc9qg.apps.googleusercontent.com'
+ENV['GOOGLE_CONSUMER_SECRET'] = 'BLGtfnvKGdQhXfBgb9iBlxqp'
+
+ENV['FACEBOOK_CONSUMER_KEY'] = '1246108248797163'
+ENV['FACEBOOK_CONSUMER_SECRET'] = '9d8f2f40a9cd4df5ba0570e9e3b4b06d'
+
+ENV["EMAIL_USER_NAME"] = 'answerawesome'
+ENV["EMAIL_PASSWORD"] =  'Sup3r$ecret$$'
